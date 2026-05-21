@@ -1,0 +1,251 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+/* Jejak Daging Design System - Color Tokens */
+:root {
+  /* Emerald — brand primary (from logo cow + arc) */
+  --emerald-900: #053f2a;
+  --emerald-800: #0a5538;
+  --emerald-700: #0e6e4f;
+  --emerald-600: #128861;
+  --emerald-500: #1ca576;
+  --emerald-100: #d6efe2;
+  --emerald-50: #ebf7f0;
+
+  /* Forest — brand secondary (from logo road) */
+  --forest-800: #1f5a26;
+  --forest-700: #2d6e34;
+  --forest-600: #347a3b;
+  --forest-500: #4a9252;
+  --forest-100: #d8ebd6;
+
+  /* Leaf — brand accent (from logo leaf) */
+  --leaf-800: #2e7a26;
+  --leaf-700: #3d9a35;
+  --leaf-600: #4fb048;
+  --leaf-500: #6cc163;
+  --leaf-100: #dff2da;
+
+  /* Warm Sand + Off-white surfaces */
+  --sand-300: #d9c69e;
+  --sand-200: #e8dcc4;
+  --sand-100: #f1e8d4;
+  --off-white: #faf7f0;
+  --off-white-alt: #f5f0e3;
+
+  /* Gold — ornament only */
+  --gold-700: #a07c2a;
+  --gold-600: #c9a24a;
+  --gold-500: #dbb764;
+  --gold-100: #f5e8c3;
+
+  /* Ink — warm-tinted neutrals (NEVER use pure greys) */
+  --ink-900: #1a1d18;
+  --ink-700: #43463e;
+  --ink-500: #82857b;
+  --ink-300: #c3c4bb;
+  --ink-200: #e0dfd5;
+  --ink-100: #efeee4;
+
+  /* Semantic */
+  --success: #10b981;
+  --warning: #dbb764;
+  --error: #ef4444;
+  --info: #3b82f6;
+
+  /* Design tokens mapped to shadcn */
+  --background: var(--off-white);
+  --foreground: var(--ink-900);
+  --card: #ffffff;
+  --card-foreground: var(--ink-900);
+  --popover: #ffffff;
+  --popover-foreground: var(--ink-900);
+  --primary: var(--emerald-700);
+  --primary-foreground: #ffffff;
+  --secondary: var(--ink-100);
+  --secondary-foreground: var(--ink-900);
+  --muted: var(--ink-100);
+  --muted-foreground: var(--ink-500);
+  --accent: var(--emerald-100);
+  --accent-foreground: var(--emerald-700);
+  --destructive: var(--error);
+  --destructive-foreground: #ffffff;
+  --border: var(--ink-200);
+  --input: var(--ink-100);
+  --ring: var(--emerald-500);
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-2xl: 24px;
+  --radius-3xl: 28px;
+  --radius-full: 9999px;
+  --radius: 16px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(20,25,18,0.04);
+  --shadow-md: 0 4px 14px rgba(20,25,18,0.06);
+  --shadow-lg: 0 12px 32px rgba(20,25,18,0.10);
+  --shadow-brand: 0 16px 40px rgba(14,110,79,0.28);
+}
+
+/* Dark mode */
+.dark {
+  --background: #0e1410;
+  --foreground: #f1eee2;
+  --card: #161d18;
+  --card-foreground: #f1eee2;
+  --popover: #161d18;
+  --popover-foreground: #f1eee2;
+  --primary: var(--emerald-500);
+  --primary-foreground: #0e1410;
+  --secondary: #1b231d;
+  --secondary-foreground: #f1eee2;
+  --muted: #1b231d;
+  --muted-foreground: #8c8e82;
+  --accent: #1b231d;
+  --accent-foreground: var(--emerald-500);
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #2a2e28;
+  --input: #1f231e;
+  --ring: var(--emerald-500);
+  --ink-900: #f1eee2;
+  --ink-700: #c8c7bb;
+  --ink-500: #8c8e82;
+  --ink-300: #4c4f44;
+  --ink-200: #2a2e28;
+  --ink-100: #1f231e;
+}
+
+@theme inline {
+  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-serif: 'Cormorant Garamond', 'Times New Roman', serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Jejak Daging Colors */
+  --color-emerald-50: var(--emerald-50);
+  --color-emerald-100: var(--emerald-100);
+  --color-emerald-500: var(--emerald-500);
+  --color-emerald-600: var(--emerald-600);
+  --color-emerald-700: var(--emerald-700);
+  --color-emerald-800: var(--emerald-800);
+  --color-emerald-900: var(--emerald-900);
+  
+  --color-forest-100: var(--forest-100);
+  --color-forest-500: var(--forest-500);
+  --color-forest-600: var(--forest-600);
+  --color-forest-700: var(--forest-700);
+  --color-forest-800: var(--forest-800);
+  
+  --color-leaf-100: var(--leaf-100);
+  --color-leaf-500: var(--leaf-500);
+  --color-leaf-600: var(--leaf-600);
+  --color-leaf-700: var(--leaf-700);
+  --color-leaf-800: var(--leaf-800);
+  
+  --color-sand-100: var(--sand-100);
+  --color-sand-200: var(--sand-200);
+  --color-sand-300: var(--sand-300);
+  
+  --color-gold-100: var(--gold-100);
+  --color-gold-500: var(--gold-500);
+  --color-gold-600: var(--gold-600);
+  --color-gold-700: var(--gold-700);
+  
+  --color-ink-100: var(--ink-100);
+  --color-ink-200: var(--ink-200);
+  --color-ink-300: var(--ink-300);
+  --color-ink-500: var(--ink-500);
+  --color-ink-700: var(--ink-700);
+  --color-ink-900: var(--ink-900);
+  
+  --color-off-white: var(--off-white);
+  --color-off-white-alt: var(--off-white-alt);
+  
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-error: var(--error);
+  --color-info: var(--info);
+
+  /* Radius */
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
+  --radius-2xl: var(--radius-2xl);
+  --radius-3xl: var(--radius-3xl);
+  --radius-full: var(--radius-full);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+  html {
+    @apply bg-off-white;
+  }
+}
+
+/* Custom Utilities for Jejak Daging */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+  
+  /* Shadows */
+  .shadow-brand {
+    box-shadow: var(--shadow-brand);
+  }
+  
+  /* Live pulse animation */
+  @keyframes live-pulse {
+    0% {
+      transform: scale(1);
+      opacity: 0.55;
+    }
+    100% {
+      transform: scale(1.7);
+      opacity: 0;
+    }
+  }
+  
+  .animate-live-pulse {
+    animation: live-pulse 2s ease-out infinite;
+  }
+  
+  /* Press feedback */
+  .press-feedback {
+    @apply transition-transform active:scale-[0.97] active:opacity-90;
+  }
+}
