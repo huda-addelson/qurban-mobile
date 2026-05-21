@@ -68,7 +68,7 @@ export default function JejakListPage() {
                     <Link href="/home" className="p-2 -ml-2 rounded-full hover:bg-ink-100 transition-colors">
                         <ArrowLeft className="h-5 w-5 text-ink-700" strokeWidth={1.75} />
                     </Link>
-                    <h1 className="text-xl font-bold text-ink-900">Jejak Qurban</h1>
+                    <h1 className="text-xl font-bold text-ink-900">Jejak Daging</h1>
                 </div>
 
                 <div className="flex gap-3">
@@ -90,7 +90,7 @@ export default function JejakListPage() {
             </div>
 
             {/* Jejak List */}
-            <section className="px-5 space-y-3 flex flex-col">
+            <section className="px-5 space-y-3 flex flex-col mt-3">
                 {jejaks.map((jejak) => {
                     const status = statusLabels[jejak.status];
 
